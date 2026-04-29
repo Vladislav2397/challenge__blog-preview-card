@@ -1,0 +1,173 @@
+:root {
+    --color-yellow: hsl(47, 88%, 63%);
+
+    --color-white: hsl(0, 0%, 100%);
+
+    --color-gray-500: hsl(0, 0%, 42%);
+    --color-gray-950: hsl(0, 0%, 7%);
+
+    --spacing-50: 4px;
+    --spacing-100: 8px;
+    --spacing-150: 12px;
+    --spacing-200: 24px;
+
+    --font-family-medium: 'Figtree-Medium', sans-serif;
+    --font-family-bold: 'Figtree-ExtraBold', sans-serif;
+
+    --font-size-text-preset-1: 20px;
+    --font-size-text-preset-2: 14px;
+    --font-size-text-preset-3: 12px;
+}
+
+@media (min-width: 450px) {
+    :root {
+        --font-size-text-preset-1: 24px;
+        --font-size-text-preset-2: 16px;
+        --font-size-text-preset-3: 14px;
+    }
+}
+
+@font-face {
+    font-family: 'Figtree-Medium';
+    src: url('./assets/fonts/static/Figtree-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree-ExtraBold';
+    src: url('./assets/fonts/static/Figtree-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+.text-preset-1,
+.text-preset-2,
+.text-preset-3,
+.text-preset-3-bold {
+    font-style: normal;
+    line-height: 150%;
+}
+
+.text-preset-2,
+.text-preset-3 {
+    font-family: var(--font-family-medium);
+}
+
+.text-preset-1,
+.text-preset-3-bold {
+    font-family: var(--font-family-bold);
+}
+
+.text-preset-1 {
+    font-size: var(--font-size-text-preset-1);
+    font-weight: 800;
+}
+.text-preset-2 {
+    font-size: var(--font-size-text-preset-2);
+    font-weight: 500;
+}
+.text-preset-3 {
+    font-size: var(--font-size-text-preset-3);
+    font-weight: 500;
+}
+.text-preset-3-bold {
+    font-size: var(--font-size-text-preset-3);
+    font-weight: 800;
+}
+
+body {
+    background-color: var(--color-yellow);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-200);
+    color: var(--color-gray-950);
+
+    font-family: var(--font-family);
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    display: flex;
+    padding: var(--spacing-200);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-200);
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid var(--color-gray-950);
+    background: var(--color-white);
+    box-shadow: 8px 8px 0 0 var(--color-gray-950);
+    max-width: 384px;
+    width: 100%;
+}
+
+.cover {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    aspect-ratio: 279 / 200;
+    object-fit: cover;
+}
+@media (min-width: 450px) {
+    .cover {
+        aspect-ratio: 336 / 200;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-150);
+}
+
+.tag {
+    display: inline-flex;
+    padding: var(--spacing-50) var(--spacing-150);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-100);
+    border-radius: 4px;
+    background: var(--color-yellow);
+}
+
+.title {
+    transition: color 150ms ease;
+    cursor: pointer;
+}
+.title:hover {
+    color: var(--color-yellow);
+}
+
+.author {
+    display: flex;
+    gap: var(--spacing-150);
+    align-items: center;
+}
+.author-name {
+    /* A constant is used because, according to the design,
+    the mobile version uses the same size as the desktop version */
+    font-size: 14px;
+}
+
+.avatar {
+    width: 32px;
+    height: 32px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
