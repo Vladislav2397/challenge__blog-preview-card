@@ -153,6 +153,10 @@ body {
     color: var(--color-yellow);
 }
 
+.description {
+    color: var(--color-gray-500);
+}
+
 .author {
     display: flex;
     gap: var(--spacing-150);
